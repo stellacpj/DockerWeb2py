@@ -25,11 +25,9 @@ RUN apt-get update && \
 	apt-get -y install nginx-full && \
 	apt-get -y install build-essential python-dev libxml2-dev python-pip unzip wget supervisor && \
 	pip install setuptools --no-use-wheel --upgrade && \
-        pip install docker-jinja && \
 	pip install --upgrade uwsgi && \
 	apt-get clean && \
 	mkdir /etc/nginx/conf.d/web2py
-RUN apt-get -yqq install python-jinja2
 
 # copy nginx config files from repo
 ADD gzip_static.conf /etc/nginx/conf.d/web2py/gzip_static.conf
